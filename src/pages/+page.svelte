@@ -63,8 +63,8 @@
 
 <svelte:window bind:scrollY={scrollTop} />
 <svelte:head>
-  <title>iptv-org</title>
-  <meta name="description" content="iptv-org is user editable database for TV channels" />
+  <title>farhan-iptv-org</title>
+  <meta name="description" content="farhan-iptv-org is user editable database for TV channels" />
 </svelte:head>
 
 <header
