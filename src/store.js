@@ -76,7 +76,7 @@ export function setSearchParam(key, value) {
 
 export function setPageTitle(value) {
   if (browser) {
-    const title = value ? `${value} · iptv-org` : 'iptv-org'
+    const title = value ? `${value} · -farhan-iptv-org` : '-farhan-iptv-org'
     window.document.title = title
   }
 }
@@ -95,7 +95,7 @@ async function loadAPI() {
     channels,
     guides
   ] = await Promise.all([
-    fetch('https://iptv-org.github.io/api/countries.json')
+    fetch('https://-farhan-iptv-org.github.io/api/countries.json')
       .then(r => r.json())
       .then(data => (data.length ? data : []))
       .then(data =>
@@ -105,34 +105,34 @@ async function loadAPI() {
         })
       )
       .then(data => _.keyBy(data, 'code')),
-    fetch('https://iptv-org.github.io/api/regions.json')
+    fetch('https://farhan-iptv-org.github.io/api/regions.json')
       .then(r => r.json())
       .then(data => (data.length ? data : []))
       .then(data => _.keyBy(data, 'code')),
-    fetch('https://iptv-org.github.io/api/subdivisions.json')
+    fetch('https://farhan-iptv-org.github.io/api/subdivisions.json')
       .then(r => r.json())
       .then(data => (data.length ? data : []))
       .then(data => _.keyBy(data, 'code')),
-    fetch('https://iptv-org.github.io/api/languages.json')
+    fetch('https://farhan-iptv-org.github.io/api/languages.json')
       .then(r => r.json())
       .then(data => (data.length ? data : []))
       .then(data => _.keyBy(data, 'code')),
-    fetch('https://iptv-org.github.io/api/categories.json')
+    fetch('https://farhan-iptv-org.github.io/api/categories.json')
       .then(r => r.json())
       .then(data => (data.length ? data : []))
       .then(data => _.keyBy(data, 'id')),
-    fetch('https://iptv-org.github.io/api/streams.json')
+    fetch('https://farhan-iptv-org.github.io/api/streams.json')
       .then(r => r.json())
       .then(data => (data.length ? data : []))
       .then(data => _.groupBy(data, 'channel')),
-    fetch('https://iptv-org.github.io/api/blocklist.json')
+    fetch('https://farhan-iptv-org.github.io/api/blocklist.json')
       .then(r => r.json())
       .then(data => (data.length ? data : []))
       .then(data => _.groupBy(data, 'channel')),
-    fetch('https://iptv-org.github.io/api/channels.json')
+    fetch('https://farhan-iptv-org.github.io/api/channels.json')
       .then(r => r.json())
       .then(data => (data.length ? data : [])),
-    fetch('https://iptv-org.github.io/api/guides.json')
+    fetch('https://farhan-iptv-org.github.io/api/guides.json')
       .then(r => r.json())
       .then(data => (data.length ? data : []))
       .then(data => data.filter(guide => guide.channel))
